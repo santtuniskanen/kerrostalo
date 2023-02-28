@@ -7,10 +7,11 @@
 class Kerrostalo {
 public:
     Kerrostalo();
+    double laskeKulutus(double);
+private:
     Katutaso first;
     Kerros toka;
     Kerros kolmas;
-    double laskeKulutus(double);
 
 };
 

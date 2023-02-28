@@ -9,23 +9,15 @@ Katutaso::Katutaso() {
     cout << "Katutaso luotu" << endl;
 }
 
-void Katutaso::maaritaAsunnot(int a, int b) {
+void Katutaso::maaritaAsunnot() {
     cout << "Katutason asuntoja luotu 2kpl" << endl;
-    as1.maarita(a, b);
-    as2.maarita(a, b);
+    as1.maarita(2, 100);
+    as2.maarita(2, 100);
+    this->Kerros::maaritaAsunnot();
 }
 
 double Katutaso::laskeKulutus(double hinta) {
-    double kulutus = 0.0;
-    kulutus += as1.asukasMaara * as1.neliot;
-    kulutus += as2.asukasMaara * as2.neliot;
-    kulutus *= hinta;
-    return kulutus;
+    return as1.laskeKulutus(hinta)+as2.laskeKulutus(hinta)
+            +Kerros::laskeKulutus(hinta);
 }
 
-double Katutaso::laskeKokonaiskulutus(double s) {
-    double kulutus = Kerros::laskeKokonaiskulutus(s);
-    kulutus += as1.asukasMaara * as1.neliot + as2.asukasMaara * as2.neliot;
-    cout << "Kerroksen ja katutason asuntojen kulutus " << kulutus << endl;
-    return kulutus;
-}

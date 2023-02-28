@@ -7,33 +7,18 @@ Kerros::Kerros() {
     cout << "Kerros luotu" << endl;
 }
 
-void Kerros::maaritaAsunnot(int a, int b) {
+void Kerros::maaritaAsunnot() {
     cout << "Maaritetaan 4kpl kerroksen asuntoja" << endl;
-    as1.maarita(a, b);
-    as2.maarita(a, b);
-    as3.maarita(a, b);
-    as4.maarita(a, b);
+    as1.maarita(2,100);
+    as2.maarita(2,100);
+    as3.maarita(2,100);
+    as4.maarita(2,100);
 }
 
-double Kerros::laskeKulutus(double s){
-    double total_kulutus = as1.asukasMaara * as1.neliot +
-                           as2.asukasMaara * as2.neliot +
-                           as3.asukasMaara * as3.neliot +
-                           as4.asukasMaara * as4.neliot;
-        double kulutus = s * total_kulutus;
-        cout << "Kerroksen asuntojen kulutus, kun hinta = " << s <<
-             " on " << kulutus <<endl;
-    return kulutus;
+double Kerros::laskeKulutus(double hinta){
+    return as1.laskeKulutus(hinta)+as2.laskeKulutus(hinta)
+         + as3.laskeKulutus(hinta)+as4.laskeKulutus(hinta);
 }
 
-double Kerros::laskeKokonaiskulutus(double s) {
-    double total_kulutus = as1.asukasMaara * as1.neliot +
-                           as2.asukasMaara * as2.neliot +
-                           as3.asukasMaara * as3.neliot +
-                           as4.asukasMaara * as4.neliot;
-    double kulutus = s * total_kulutus;
-    cout << "Kerroksen asuntojen kulutus, kun hinta = " << s <<
-             " on " << kulutus <<endl;
-    return kulutus;
-}
+
 

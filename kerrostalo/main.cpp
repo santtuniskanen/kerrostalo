@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     Kerrostalo h;
-    h.laskeKulutus(1);
+    cout<<"Kerrostalon kulutus, = "<<h.laskeKulutus(1)<<endl;
     return 0;
 }
 

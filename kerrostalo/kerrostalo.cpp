@@ -4,14 +4,14 @@ using namespace std;
 
 Kerrostalo::Kerrostalo() {
     cout << "Kerrostalo luotu" << endl;
-    first.maaritaAsunnot(2, 100);
-    toka.maaritaAsunnot(2, 100);
-    kolmas.maaritaAsunnot(2, 100);
+    first.maaritaAsunnot();
+    toka.maaritaAsunnot();
+    kolmas.maaritaAsunnot();
 }
 
-double Kerrostalo::laskeKulutus(double s) {
-    first.laskeKulutus(s);
-    toka.laskeKulutus(s);
-    kolmas.laskeKulutus(s);
-    return 0;
+double Kerrostalo::laskeKulutus(double hinta) {
+    double katutasonKulutus = first.laskeKulutus(hinta);
+    double kerrostenKulutus = toka.laskeKulutus(hinta) + kolmas.laskeKulutus(hinta);
+    return katutasonKulutus+kerrostenKulutus;
+
 }
